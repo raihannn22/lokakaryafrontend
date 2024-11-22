@@ -1,6 +1,61 @@
-<p>user workss!</p>
-<div class="card flex justify-content-center">
-    <p-button label="Check" icon="pi pi-check"></p-button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p-table [value]="users" [paginator]="true" [rows]="10" [loading]="loading" class="p-datatable-striped">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Position</th>
+                <th>Email Address</th>
+                <th>Employee Status</th>
+                <th>Join Date</th>
+                <th>Enabled</th>
+                <th>Password</th>
+                <th>Division Id</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+    
+        <ng-template pTemplate="body" let-user>
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.full_name }}</td>
+                <td>{{ user.position }}</td>
+                <td>{{ user.email_address }}</td>
+                <!-- <td>{{ user.employee_status }}</td> -->
+                <td>
+                    {{
+                    user.employee_status === 1 ? 'Kontrak' :
+                    user.employee_status === 2 ? 'Permanen' :
+                    'Invalid'
+                    }}
+                </td>
+                <td>{{ user.join_date | date:'yyyy-MM-dd' }}</td>
+                <!-- <td>{{ user.enabled ? 'Yes' : 'No' }}</td> -->
+                <td>
+                    {{
+                    user.enabled === 0 ? 'Disabled' :
+                    user.enabled === 1 ? 'Enabled' :
+                    'Invalid'
+                    }}
+                </td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.division_id }}</td>
+                <td>
+                    <button pButton type="button" label="Update" icon="pi pi-pencil" (click)="editUser(user)"></button>
+                    <button pButton type="button" label="Delete" icon="pi pi-trash" class="p-button-danger"
+                        (click)="deleteUser(user.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</body>
+</html>
 
-<p-calendar [(ngModel)]="date" />
+
