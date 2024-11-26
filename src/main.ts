@@ -3,8 +3,10 @@ import { bootstrapApplication } from '@angular/platform-browser';
 // =======
 import { importProvidersFrom } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+
 // >>>>>>> raihan
 import { AppComponent } from './app/app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // tambah ini saja
 // import { appConfig } from './app/app.config';
 
 // <<<<<<< HEAD
@@ -14,7 +16,7 @@ import { AppComponent } from './app/app.component';
 // =======
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(HttpClientModule)  
+    importProvidersFrom(HttpClientModule, BrowserAnimationsModule)  
   ]
 }).catch(err => console.error(err));
 // >>>>>>> raihan

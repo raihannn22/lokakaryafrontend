@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule , } from '@angular/forms';
 import { FloatLabelModule } from "primeng/floatlabel"
 import { PasswordModule } from 'primeng/password';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../../service/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({

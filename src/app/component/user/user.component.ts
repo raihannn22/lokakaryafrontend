@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
-import { UserService } from './user.service'; 
+import { UserService } from '../../service/user/user.service'; 
 import { Router } from '@angular/router';
 
 
