@@ -86,7 +86,7 @@ export class GroupAchievementComponent implements OnInit {
           this.groupAchievementDialog = false;
         },
         error: (error) => {
-          console.error('Error updating achievement:', error);
+          console.error('Error updating group achievement:', error);
         }
       });
     } else {
@@ -97,7 +97,7 @@ export class GroupAchievementComponent implements OnInit {
           this.groupAchievementDialog = false;
         },
         error: (error) => {
-          console.error('Error saving achievement:', error);
+          console.error('Error saving group achievement:', error);
         }
       });
     }
@@ -111,7 +111,7 @@ export class GroupAchievementComponent implements OnInit {
           this.getAllGroupAchievements();
         },
         error: (error) => {
-          console.error('Error deleting achievement:', error);
+          console.error('Error deleting group achievement:', error);
         }
       });
     }

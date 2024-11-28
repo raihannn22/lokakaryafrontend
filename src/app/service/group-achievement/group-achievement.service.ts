@@ -14,26 +14,19 @@ export class GroupAchievementService {
     return this.http.get(`${this.apiUrl}/all`);
   }
 
-  // saveGroupAchievement(data: any): Observable<any> {
-  //   return this.http.put(`${this.apiUrl}/save`, data);
-  // }
 
   saveGroupAchievement(groupAchievement: any): Observable<any> {
-  return this.http.put(`${this.apiUrl}/save`, groupAchievement);
-}
+    return this.http.put(`${this.apiUrl}/save`, groupAchievement);
+  }
 
-updateGroupAchievement(id: string, groupAchievement: any): Observable<any> {
-  return this.http.patch(`${this.apiUrl}/update/${id}`, groupAchievement);
-}
+  updateGroupAchievement(id: string, groupAchievement: any): Observable<any> {
+    return this.http.patch(`${this.apiUrl}/update/${id}`, groupAchievement);
+  }
 
 
   getGroupAchievementById(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/get/${id}`);
   }
-
-  // updateGroupAchievement(id: string, data: any): Observable<any> {
-  //   return this.http.patch(`${this.apiUrl}/update/${id}`, data);
-  // }
 
   deleteGroupAchievement(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/delete/${id}`);
